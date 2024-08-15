@@ -4,6 +4,7 @@
 import {Canvas, MeshProps} from "@react-three/fiber";
 import {Grid} from "@/components/Grid";
 import {Center, Environment, OrbitControls,  useGLTF} from "@react-three/drei";
+import {Mesh} from "three";
 
 
 export default function Home() {
@@ -46,8 +47,10 @@ function Experience() {
 
 function Suzi(props: MeshProps) {
   const { nodes } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/suzanne-high-poly/model.gltf')
+  const model = nodes.Suzanne as Mesh;
+  
   return (
-    <mesh castShadow receiveShadow geometry={nodes.Suzanne.geometry} {...props}>
+    <mesh castShadow receiveShadow geometry={model.geometry} {...props}>
       <meshStandardMaterial color="#9d4b4b" />
     </mesh>
   )
