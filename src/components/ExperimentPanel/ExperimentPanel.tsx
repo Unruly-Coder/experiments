@@ -1,7 +1,8 @@
 "use client";
 
 import s from './ExperimentPanel.module.css';
-import Link from "next/link";
+
+import {TransitionLink} from "@/components/TransitionWrapper";
 import {ChangeEventHandler, useCallback, useRef, useState} from "react";
 import cn from "classnames";
 import Image, {StaticImageData} from "next/image";
@@ -42,7 +43,7 @@ export function ExperimentPanel({experiments}: ExperimentPanelProps) {
   return (
     <aside className={cn(s['main-wrapper'], !isExpanded && s['collapsed'])}>
       <header className={s['header-wrapper']}>
-        <Link href={'/'}><h1><span>PB</span></h1></Link>
+        <TransitionLink href={'/'}><h1><span>PB</span></h1></TransitionLink>
         <button onClick={toggleExpanded}>
           <svg 
             width="24" 
@@ -126,9 +127,9 @@ interface ExperimentItemProps {
 function ExperimentItem({active, title, href, img}: ExperimentItemProps) {
   
   return (
-    <Link href={href} className={cn(s['experiment-item'], active && s['active'])}>
+    <TransitionLink href={href} className={cn(s['experiment-item'], active && s['active'])} enterTransitionClassName={s.active}>
         <h2>{title}</h2>
         <Image src={img} alt={"Experiment image"} priority={false} placeholder={"blur"}/>
-    </Link>
+    </TransitionLink>
   );
 }

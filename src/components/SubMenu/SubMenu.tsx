@@ -1,6 +1,6 @@
-import Link from "next/link";
 import s from './SubMenu.module.css';
 import {usePathname} from "next/navigation";
+import {TransitionLink} from "@/components/TransitionWrapper";
 
 interface Props {
   items: {name: string, href: string}[];
@@ -14,7 +14,7 @@ export function SubMenu({items}: Props) {
     <ul className={s.list}>
       {items.map((item, index) => (
         <li key={item.name} className={pathname === item.href ? s.active : ''}>
-          <Link href={item.href}>{item.name}</Link>
+          <TransitionLink href={item.href}>{item.name}</TransitionLink>
         </li>)
       )}
     </ul>

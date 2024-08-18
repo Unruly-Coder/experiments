@@ -1,0 +1,53 @@
+.wrapper {
+
+    
+    
+    &:after {
+        pointer-events: none;
+        content: '';
+        display: block;
+        position: fixed;
+        top:0;
+        width: 100lvw;
+        height: 100lvh;
+        background: #121212;
+        z-index: 1;
+        will-change: opacity;
+        opacity: 0;
+    }
+    
+    &.enter {
+        &:after {
+            animation: enter .35s forwards ease;
+        }
+    }
+    
+    &.exit {
+        &:after {
+            animation: exit .5s forwards ease;
+        }
+    }
+}
+
+@keyframes enter {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+
+        
+    }
+}
+
+@keyframes exit {
+    0% {
+        opacity: 1;
+   
+    }
+    100% {
+        opacity: 0;
+ 
+    }
+}
