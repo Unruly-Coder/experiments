@@ -1,0 +1,34 @@
+.list {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    text-transform: uppercase;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    
+    & li {
+        position: relative;
+        border-radius: var(--radius-medium);
+        background: #2c2c2c;
+        border: 1px solid transparent;
+        
+        & a {
+            display: block;
+            padding: 0.5rem 1rem;
+        }
+
+    }
+    
+    & li:hover {
+        background: #3c3c3c;
+    }
+    
+    & li.active {
+        background:
+                linear-gradient(to bottom, black, black) padding-box,
+                conic-gradient(from 0deg in oklch longer hue, oklch(1 0.37 0) 0 0) border-box;
+    }
+}
+

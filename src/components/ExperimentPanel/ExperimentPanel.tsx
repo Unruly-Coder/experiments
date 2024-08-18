@@ -103,7 +103,7 @@ export function ExperimentPanel({experiments}: ExperimentPanelProps) {
             return e.title.toLowerCase().includes(searchValue.toLowerCase());
           })).map((e, index) => (
             <li key={index}>
-              <ExperimentItem title={e.title} href={e.href} img={e.img} active={pathname === e.href}/>
+              <ExperimentItem title={e.title} href={e.href} img={e.img} active={pathname.includes(e.href)}/>
             </li>
           ))}
         </ul>

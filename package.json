@@ -14,6 +14,7 @@
     "@types/three": "^0.167.1",
     "classnames": "^2.5.1",
     "framer-motion": "^11.3.27",
+    "leva": "^0.9.35",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
@@ -25,6 +26,12 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack-glsl-loader": "^1.0.1"
+  },
+  "overrides": {
+    "leva": {
+      "@radix-ui/react-portal": "1.0.2"
+    }
   }
 }

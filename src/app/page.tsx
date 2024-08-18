@@ -1,17 +1,11 @@
 "use client";
 
-
 import {Canvas, MeshProps} from "@react-three/fiber";
 import {Grid} from "@/components/Grid";
 import {Center, Environment, OrbitControls,  useGLTF} from "@react-three/drei";
 import {Mesh} from "three";
 
-
 export default function Home() {
-  
- 
-  
-  
   
   return (
     <Canvas shadows camera={{ position: [8, 7, 10], fov: 25 }}>
