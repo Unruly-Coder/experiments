@@ -8,6 +8,7 @@ import {useFrame} from "@react-three/fiber";
 import { SoftShadows, useGLTF } from "@react-three/drei";
 import {useEffect} from "react";
 import {useControls} from "leva";
+import {MeshPhysicalMaterial} from "three";
 
 
 export default function Page() {
@@ -22,7 +23,7 @@ export default function Page() {
         <meshStandardMaterial color={'#5e5e5e'}/>
       </mesh>
 
-      <directionalLight castShadow position={[2.5, 8, 5]} intensity={2.5} shadow-mapSize={1024}>
+      <directionalLight castShadow position={[2.5, 4, 5]} intensity={2.5} shadow-mapSize={1024}>
         <orthographicCamera attach="shadow-camera" args={[-10, 10, -10, 10, 0.1, 50]}/>
       </directionalLight>
       <directionalLight position={[0, 1, -1]} intensity={2}/>
@@ -43,10 +44,14 @@ function Myself() {
       if (child.isObject3D) {
         child.castShadow = true;
         child.frustumCulled = false;
-
       }
+      
+      const eyelashesMaterial = materials['AvatarEyelashes.001'] as MeshPhysicalMaterial;
+      eyelashesMaterial.metalness = 0
+     
     });
-  }, [scene]);
+  }, []);
+
   
   const controls = useControls('Model', {
     animate: false
