@@ -5,14 +5,15 @@ import {Canvas} from "@react-three/fiber";
 
 interface Props {
   children?: React.ReactNode;
+  cameraPosition?: [number, number, number];
 }
-export function DefaultScene({children}: Props) {
+export function DefaultScene({children, cameraPosition = [4,3,6]}: Props) {
   return (
     <>
-    <Canvas shadows camera={{ position: [4, 3, 6], fov: 25 }}>
+    <Canvas shadows camera={{ position: cameraPosition, fov: 25}}>
         {children}
         <Grid/>
-        <OrbitControls makeDefault/>
+        <OrbitControls makeDefault target={[0,0.5,0]}/>
     </Canvas>
     </>
   );

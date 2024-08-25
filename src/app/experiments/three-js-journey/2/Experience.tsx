@@ -18,15 +18,17 @@ export default function Experience() {
     bigWaveSpeed: { value: 0.75, min: 0, max: 4, step: 0.01 },
 
     smallWavesElevation: { value: 0.1, min: 0.1, max: 1, step: 0.1 },
-    smallWavesFrequencyX: { value: 4, min: 0, max: 10, step: 0.001 },
-    smallWavesFrequencyY: { value: 1.5, min: 0, max: 10, step: 0.001 },
+    smallWavesFrequencyX: { value: 2, min: 0, max: 10, step: 0.001 },
+    smallWavesFrequencyY: { value: 2, min: 0, max: 10, step: 0.001 },
     smallWaveSpeed: { value: 0.75, min: 0, max: 4, step: 0.01 },
     smallWavesIterations: { value: 4, min: 0, max: 5, step: 1 },
     
     depthColor: '#186691',
     surfaceColor: '#9bd8ff',
     colorOffset: { value: 0.4, min: 0, max: 1, step: 0.01 },
-    colorMultiplier: { value: 1.2, min: 0, max: 5, step: 0.01 }
+    colorMultiplier: { value: 1.2, min: 0, max: 5, step: 0.01 },
+    
+    wireframe: { value: false }
   });
 
   useFrame(({clock}) => {
@@ -73,13 +75,14 @@ export default function Experience() {
 
   return (
     <mesh position={[0, 0.5, 0]} rotation={[Math.PI / 2, 0, 0]}>
-      <planeGeometry args={[3, 3, 512, 512]}/>
+      <planeGeometry args={[3, 3, 256, 256]}/>
       <shaderMaterial
         ref={material}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         side={THREE.DoubleSide}
         uniforms={uniforms}
+        wireframe={controls.wireframe}
       />
     </mesh>
   );
