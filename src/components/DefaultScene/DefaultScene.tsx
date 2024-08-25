@@ -7,7 +7,7 @@ interface Props {
   children?: React.ReactNode;
   cameraPosition?: [number, number, number];
 }
-export function DefaultScene({children, cameraPosition = [4,3,7]}: Props) {
+export function DefaultScene({children, cameraPosition = [4,3,6]}: Props) {
   return (
     <>
     <Canvas shadows camera={{ position: cameraPosition, fov: 25}}>

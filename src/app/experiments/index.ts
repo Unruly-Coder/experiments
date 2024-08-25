@@ -9,6 +9,6 @@ export const experiments: Experiment[] = [
   }, {
     title: 'My Avatar Animation',
     href: '/experiments/my-avatar-animation',
-    img: require('./my-avatar-animation/cover.webp'),
+    img: require('./my-avatar-animation/cover.jpg'),
   }, 
 ];

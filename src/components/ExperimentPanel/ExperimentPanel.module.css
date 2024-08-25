@@ -195,7 +195,7 @@
     }
     
     &:hover img {
-        scale: 1.3;
+        scale: 1;
     }
     
     & img {
@@ -204,7 +204,7 @@
         width: 100%;
         object-fit: cover;
         top: 0;
-        scale: 1.2;
+        scale: 1.1;
         transition: scale 0.5s ease;
         will-change: scale;
         transform: translate3d(0,calc(var(--progress) * 12px),0);
